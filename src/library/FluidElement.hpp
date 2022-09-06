@@ -7,6 +7,7 @@ struct FluidElement
     double velocity{0};
     double pressure{2};
     double position{0};
+    double density{0};
 };
 
 

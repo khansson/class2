@@ -9,7 +9,7 @@
 
 
 
-std::string ReadDataEntryFromJson(std::string filename, std::string Key)
+std::string ReadEntryFromJsonAsString(std::string filename, std::string Key)
 {
 
 
@@ -22,3 +22,21 @@ std::string ReadDataEntryFromJson(std::string filename, std::string Key)
 
 
 }
+
+//Look how I have to write a second function that is nearly identical just to get a double
+double ReadDataEntryFromJsonAsDouble(std::string filename, std::string Key)
+{
+
+
+    std::ifstream inputFileStream(filename);
+    nlohmann::json InputJson;
+
+    inputFileStream >> InputJson;
+
+   return  InputJson[Key].get<double>();
+
+
+}
+
+
+
